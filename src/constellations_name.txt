@@ -1,0 +1,87 @@
+Андромеда:Andromeda
+Близнецы:Gemini
+Большая Медведица:Ursa_Major
+Большой Пёс:Canis_Major
+Весы:Libra
+Водолей:Aquarius
+Возничий:Auriga
+Волк:Lupus
+Волопас:Bootes
+Волосы Вероники:Coma_Berenices
+Ворон:Corvus
+Геркулес:Hercules
+Гидра:Hydra
+Голубь:Columba
+Гончие Псы:Canes_Venatici
+Дева:Virgo
+Дельфин:Delphinus
+Дракон:Draco
+Единорог:Monoceros
+Жертвенник:Ara
+Живописец:Pictor
+Жираф:Camelopardalis
+Журавль:Grus
+Заяц:Lepus
+Змееносец:Ophiuchus
+Змея:Serpens
+Золотая Рыба:Dorado
+Индеец:Indus
+Кассиопея:Cassiopeia
+Киль:Carina
+Кит:Cetus
+Козерог:Capricornus
+Компас:Pyxis
+Корма:Puppis
+Лебедь:Cygnus
+Лев:Leo
+Летучая Рыба:Volans
+Лира:Lyra
+Лисичка:Vulpecula
+Малая Медведица:Ursa_Minor
+Малый Конь:Equuleus
+Малый Лев:Leo_Minor
+Малый Пёс:Canis_Minor
+Микроскоп:Microscopium
+Муха:Musca
+Насос:Antlia
+Наугольник:Norma
+Овен:Aries
+Октант:Octans
+Орёл:Aquila
+Орион:Orion
+Павлин:Pavo
+Парус:Vela
+Пегас:Pegasus
+Персей:Perseus
+Печь:Fornax
+Райская Птица:Apus
+Рак:Cancer
+Резец:Caelum
+Рыбы:Pisces
+Рысь:Lynx
+Северная Корона:Corona_Borealis
+Секстант:Sextans
+Сетка:Reticulum
+Скорпион:Scorpius
+Скульптор:Sculptor
+Столовая Гора:Mensa
+Стрела:Sagitta
+Стрелец:Sagittarius
+Телескоп:Telescopium
+Телец:Taurus
+Треугольник:Triangulum
+Тукан:Tucana
+Феникс:Phoenix
+Хамелеон:Chamaeleon
+Центавр:Centaurus
+Цефей:Cepheus
+Циркуль:Circinus
+Часы:Horologium
+Чаша:Crater
+Щит:Scutum
+Эридан:Eridanus
+Южная Корона:Corona_Australis
+Южная Рыба:Piscis_Austrinus
+Южный Крест:Crux
+Южный Треугольник:Triangulum_Australe
+Ящерица:Lacerta

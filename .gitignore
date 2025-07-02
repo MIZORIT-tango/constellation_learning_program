@@ -1,0 +1,24 @@
+# Виртуальные окружения
+venv/
+.venv/
+env/
+
+# Кэш и скомпилированные файлы
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Логи и данные
+*.log
+*.sqlite3
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# Пакеты и сборки
+dist/
+build/
+*.egg-info/
