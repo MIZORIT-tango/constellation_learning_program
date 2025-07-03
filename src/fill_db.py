@@ -1,4 +1,6 @@
-from models import Constellation, session
+from models import Constellation
+from database import get_session
+session = next(get_session())
 # from pillow import Image
 # import io
 import os

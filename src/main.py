@@ -1,4 +1,6 @@
-from models import session, Constellation
+from models import Constellation
+from database import get_session
+session = next(get_session())
 from fill_db import load_constellations_from_file
 from PyQt5.QtWidgets import (QApplication, QMainWindow, QLabel,
                              QPushButton, QVBoxLayout, QWidget,
