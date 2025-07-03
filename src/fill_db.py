@@ -1,6 +1,6 @@
 from models import Constellation, session
-from PIL import Image
-import io
+# from pillow import Image
+# import io
 import os
 
 
