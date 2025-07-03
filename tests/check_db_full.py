@@ -1,4 +1,6 @@
-from models import session, Constellation
+from src.models import Constellation
+from src.database import get_session
+session = next(get_session())
 
 
 def check_constellations():

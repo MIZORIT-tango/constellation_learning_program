@@ -19,7 +19,7 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 # Файл для кэширования состояния базы данных
-DB_STATE_FILE = "db_state.txt"
+DB_STATE_FILE = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'src', 'db_state.txt'))
 
 # Функция для создания пользователя, если он не существует
 def create_user_if_not_exists():
