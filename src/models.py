@@ -1,5 +1,6 @@
 from sqlalchemy import Column, Integer, String, LargeBinary
 from sqlalchemy.orm import declarative_base
+from database import engine
 
 Base = declarative_base()
 
@@ -15,3 +16,6 @@ class Constellation(Base):
 
     def __repr__(self):
         return f"<Constellation(id={self.id}, name='{self.name}', rus='{self.rus_name}')>"
+
+
+Base.metadata.create_all(engine)
