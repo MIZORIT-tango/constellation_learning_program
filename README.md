@@ -37,25 +37,13 @@
 ## Настройка PostgreSQL
 Приложение требует PostgreSQL для хранения данных.
 
-### Автоматическая настройка (рекомендуется):
+### Автоматическая настройка:
 
 Запустите install_db.bat – он создаст:
 
 * Базу данных: constellation_db
 
-* Пользователя: constellation_user с паролем your_password (замените в скрипте)
-
-### Вручную:
-
-1. Создайте БД и пользователя:
-
-```sql
-CREATE DATABASE constellation_db;
-CREATE USER constellation_user WITH PASSWORD 'your_password';
-GRANT ALL PRIVILEGES ON DATABASE constellation_db TO constellation_user;
-```
-
-2. Настройте pg_hba.conf для доступа.
+* Пользователя: constellation_user с паролем mizorit
 
 # Запуск
 
@@ -78,7 +66,7 @@ GRANT ALL PRIVILEGES ON DATABASE constellation_db TO constellation_user;
 1. Запустите скрипт build.bat
 
    ```bash
-   python build.bat
+   start build.bat
    ```
    
 2. Перейдите в папку dist

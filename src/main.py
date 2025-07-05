@@ -8,7 +8,34 @@ from PyQt5.QtWidgets import (QApplication, QMainWindow, QLabel,
 from PyQt5.QtGui import QPixmap
 from PyQt5.QtCore import Qt
 import sys
+import os
+from pathlib import Path
 import random
+
+
+def get_resource_path(relative_path):
+    """Универсальный путь для .exe и разработки"""
+    try:
+        # Для собранного .exe
+        base_path = Path(sys._MEIPASS)
+        # Ищем ресурсы в корне временной папки
+        full_path = base_path / Path(relative_path).name
+        if full_path.exists():
+            return str(full_path)
+    except AttributeError:
+        # Для режима разработки
+        base_path = Path(__file__).parent
+
+    # Стандартный путь (со структурой src/images/)
+    full_path = base_path / relative_path
+
+    if not full_path.exists():
+        raise FileNotFoundError(
+            f"Ресурс не найден: {full_path}\n"
+            f"Искал в: {base_path}\n"
+            f"Файлы в папке: {list(base_path.glob('*'))}"
+        )
+    return str(full_path)
 
 
 class ConstellationGame(QMainWindow):
@@ -136,8 +163,9 @@ def initialize_database():
     """Инициализация базы данных"""
     if not session.query(Constellation).first():
         result = load_constellations_from_file(
-            "constellations_name.txt",
-            "constellations_hints.txt"
+            get_resource_path("constellations_name.txt"),
+            get_resource_path("constellations_hints.txt"),
+            get_resource_path("images/")
         )
         if not result:
             QMessageBox.critical(None, "Ошибка",
