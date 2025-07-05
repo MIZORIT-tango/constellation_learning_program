@@ -45,6 +45,7 @@ def load_constellations_from_file(file_name_path, file_hints_path, image_path):
     # file_hints_path = get_resource_path("src/constellations_hints.txt") файл с подсказками
     # file_name_path = get_resource_path("src/constellations_name.txt") файл с именами созвездий
     # image_path = get_resource_path("src/images") папка с фотографиями
+    folder_image_path = str(image_path).rstrip(os.sep) + os.sep
     try:
         with open(file_hints_path, 'r', encoding='utf-8') as f_hint:
             hints = {
@@ -66,7 +67,7 @@ def load_constellations_from_file(file_name_path, file_hints_path, image_path):
 
                 russian_name, english_name = line.split(':', 1)
                 try:
-                    image_path = os.path.join(image_path, f'{english_name}.jpeg')
+                    image_path = os.path.join(folder_image_path, f'{english_name}.jpeg')
 
                     if not os.path.exists(image_path):
                         print(f"ОШИБКА. Файл с путем'{image_path}' не найден. Требуется проверка целостности файлов!")

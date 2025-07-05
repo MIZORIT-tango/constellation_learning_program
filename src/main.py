@@ -8,30 +8,34 @@ from PyQt5.QtWidgets import (QApplication, QMainWindow, QLabel,
 from PyQt5.QtGui import QPixmap
 from PyQt5.QtCore import Qt
 import sys
+import os
 from pathlib import Path
 import random
 
 
 def get_resource_path(relative_path):
-    """
-    Возвращает корректный путь для ресурсов как в .exe, так и в режиме разработки.
-    relative_path - путь к файлу/папке относительно папки с .spec или main.py.
-    """
+    """Универсальный путь для .exe и разработки"""
     try:
-        # Режим .exe (файлы распакованы во временную папку _MEIPASS)
+        # Для собранного .exe
         base_path = Path(sys._MEIPASS)
+        # Ищем ресурсы в корне временной папки
+        full_path = base_path / Path(relative_path).name
+        if full_path.exists():
+            return str(full_path)
     except AttributeError:
-        # Режим разработки (используем текущую папку)
+        # Для режима разработки
         base_path = Path(__file__).parent
 
-    # Собираем итоговый путь
+    # Стандартный путь (со структурой src/images/)
     full_path = base_path / relative_path
 
-    # Дополнительная проверка
     if not full_path.exists():
-        raise FileNotFoundError(f"Ресурс не найден: {full_path}")
-
-    return full_path
+        raise FileNotFoundError(
+            f"Ресурс не найден: {full_path}\n"
+            f"Искал в: {base_path}\n"
+            f"Файлы в папке: {list(base_path.glob('*'))}"
+        )
+    return str(full_path)
 
 
 class ConstellationGame(QMainWindow):
@@ -159,9 +163,9 @@ def initialize_database():
     """Инициализация базы данных"""
     if not session.query(Constellation).first():
         result = load_constellations_from_file(
-            get_resource_path("src/constellations_name.txt"),
-            get_resource_path("src/constellations_hints.txt"),
-            get_resource_path("src/images")
+            get_resource_path("constellations_name.txt"),
+            get_resource_path("constellations_hints.txt"),
+            get_resource_path("images/")
         )
         if not result:
             QMessageBox.critical(None, "Ошибка",

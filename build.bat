@@ -47,9 +47,9 @@ if exist "%MAIN_PY%" (
 REM Создаем новый исполняемый файл
 echo Running PyInstaller...
 pyinstaller --onefile ^
-            --add-data "src/constellations_name.txt;src" ^
-            --add-data "src/constellations_hints.txt;src" ^
-            --add-data "src/images;images" ^
+            --add-data "src/constellations_name.txt;." ^
+            --add-data "src/constellations_hints.txt;." ^
+            --add-data "src/images/*;images/" ^
             src/main.py
 
 REM Проверяем, что файл создан
